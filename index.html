@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+<link rel="manifest" href="./public/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -24,19 +29,24 @@
 <body>
     <div class="landing-page">
         <!-- navbar -->
-        <nav class="navbar">
+        <nav id="navbar" class="navbar">
             <div class="container">
                 <div class="navbar__logo">
-                    <a href="#" class="brand">
-                        <img src="./logo.jpeg" alt="image" class="logo">
-                        <h3>GreenTheLand</h3>
-                    </a>
+                    <div>
+                        <a href="#navbar" class="brand">
+                            <img src="./logo.jpeg" alt="image" class="logo">
+                            <h3>GreenTheLand</h3>
+                        </a>
+                    </div>
+                    <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
                 </div>
                 <ul class="list">
-                    <li><a href="index.html">Initiative</a></li>
-                    <li><a href="about.html">planting</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#About">About Us</a></li>
+                    <li><a href="#News-section">News</a></li>
+                    <li><a href="#Contacts">Contact</a></li>
                 </ul>
+                
+               
             </div>
         </nav>
         <main class="welcome-text">
@@ -48,7 +58,7 @@
         </main>
     </div>
     <!-- mission -->
-    <div class="mission-content">
+    <div id="About" class="mission-content">
         <div class="mission">
             <div class="content">
                 <img src="./assets/mission2.jpg" alt="students planting trees">
@@ -191,8 +201,8 @@
             </section>
             
         <!-- news updates -->
-        <h1 class="news-title">News Updates</h1>
-        <div class="news-container">
+        <h1 id="News-section" class="news-title">News Updates</h1>
+        <div  class="news-container">
             <div class="news-card">
               <img src="./assets/mission1.jpg" alt="News Image 1">
               <div class="content">
@@ -220,7 +230,7 @@
               </div>
             </div>
 
-            <div class="news-card">
+            <div  class="news-card">
                 <img src="./assets/advert3.png" alt="News Image 2">
                 <div class="content">
                   <h2 class="news-title">Planned Launch in Nairobi</h2>
@@ -300,9 +310,30 @@
             </form>
         </div>
 
-        
+        <!-- contact us -->
+        <div id="Contacts" class="contact-us-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <a href="https://instagram.com/green_theland11" target="_blank" class="contact-item">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>green_theland11</span>
+                </a>
+                <a href="mailto:greentheland33@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>greentheland33@gmail.com</span>
+                </a>
+                <a href="tel:+254115430508" class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+254115430508</span>
+                </a>
+            </div>
+        </div>
         
     </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Green the Land. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>

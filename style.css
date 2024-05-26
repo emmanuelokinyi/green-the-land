@@ -13,20 +13,26 @@ body {
     background-color: rgba(65, 99, 68, 0.8); 
     padding: 10px 20px;
     margin: 10px 20px; 
-    border-radius: 10px; 
+    border-radius: 30px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     position: fixed; 
     top: 10px; 
-    left: 20px; 
-    right: 20px; 
+    left: 0px; 
+    right: 0px; 
     z-index: 1000; 
     height: 50px;
+}
+
+.navbar i{
+    display: none;
 }
 
 .container {
     display: flex;  
     justify-content: space-between;
     align-items: center;
+    gap: 600px;
+    
 }
 
 .navbar__logo {
@@ -44,7 +50,7 @@ body {
 .logo {
     width: 70px; 
     height: 40px; 
-    border-radius: 8px; 
+    border-radius: 30px; 
     margin-right: 10px; 
 }
 
@@ -74,7 +80,8 @@ body {
 
 .list a:hover {
     text-decoration: none;
-    color: rgb(27, 66, 11);
+    color: rgb(16, 204, 9);
+    font-size: larger;
 }
 
 .landing-page {
@@ -294,7 +301,7 @@ body {
 }
 
 
-@media (max-width: 830px) {
+@media screen and (max-width: 830px) {
     .body{
         overflow: hidden;
     }
@@ -304,6 +311,12 @@ body {
         opacity: 1; 
         height: 50vh;
     }
+    .navbar i{
+        display: flex;
+        margin-right: 50px;
+        cursor: pointer;
+        margin-left: 100px;
+    }
 
     .slideshow-container {
         gap: 10px;
@@ -311,16 +324,20 @@ body {
 
     .navbar {
         padding: 5px 5px;
-        margin: 5px;
         margin: auto;
+        
     }
     .container {
         flex-direction: column; 
         align-items: flex-start; 
+        justify-content: space-between;
+        
+        
     }
 
     .navbar__logo {
-        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-top: 5px;
     }
 
     .brand h3 {
@@ -352,11 +369,11 @@ body {
         padding-top: 100px; 
     }
     .welcome-text h1 {
-        font-size: 70px;
+        font-size: 60px;
     }
 
     .welcome-text h2 {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .mission {
@@ -399,6 +416,69 @@ body {
     }
 }
 
+
+@media (device-width: 430px) and (device-height: 932px){
+    .navbar i{
+        margin-left: 150px;
+    }
+}
+/* Surface Duo in portrait orientation */
+@media (device-width: 540px) and (device-height: 720px)  {
+    .navbar i{
+        margin-left: 250px;
+    }
+    .welcome-text h1{
+        margin-top: 300px;
+        font-size: 80px;
+    }
+    .welcome-text h2{
+        font-size: 40px;
+    }
+}   
+  
+  /* iPad Air in portrait orientation */
+  @media (device-width: 820px) and (device-height: 1180px)  {
+    .navbar i{
+        margin-left: 500px;
+    }
+    .welcome-text h1{
+        margin-top: 300px;
+        font-size: 80px;
+    }
+    .welcome-text h2{
+        font-size: 40px;
+    }
+  }
+  
+  /* iPad Pro 12.9-inch in portrait orientation */
+  @media (device-width: 1024px) and (device-height: 1366px)  {
+    .container{
+        gap: 300px;
+    }
+    .welcome-text h1{
+        margin-top: 300px;
+        font-size: 80px;
+    }
+    .welcome-text h2{
+        font-size: 40px;
+    }
+  }
+  
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar i{
+        margin-left: 500px;
+    }
+    .welcome-text h1{
+        margin-top: 200px;
+        font-size: 80px;
+    }
+    .welcome-text h2{
+        font-size: 40px;
+    }
+  }
+  
 
 /* initiative section */
 .initiative-section {
@@ -453,8 +533,6 @@ body {
             max-width: 100%;
         }
     }
-
-
 
 
 /* news updates */
@@ -575,22 +653,9 @@ body {
 .feedback-img {
     width: 500px;
     height: 600px;
-    max-height: 300px; /* Adjust the height as needed */
+    max-height: 300px; 
     vertical-align: middle;
     border-radius: 20px;
-}
-
-/* Caption text */
-.feedback-text {
-    color: #333;
-    font-size: 15px;
-    padding: 12px 16px;
-    position: absolute;
-    bottom: 16px;
-    width: 580px;
-    text-align: center;
-    background: rgba(248, 248, 248, 0.459); /* Semi-transparent background */
-    border-radius: 0 0 10px 10px;
 }
 
 /* Fading animation */
@@ -656,7 +721,18 @@ body {
 
 .feedback-active, .feedback-dot:hover {
     background-color: #717171;
-}                           
+}      
+
+@media (max-width: 768px) {
+    .feedback-text{
+        max-width: 230px;
+        font-size: 10px;
+    }
+    .feedback-img{
+        height: 400px;
+    }
+
+}
 
 /* stats */
 .stats-text{
@@ -669,7 +745,7 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: #ffffff; /* Vegetation green */
+    background-color: #ffffff; 
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -699,6 +775,9 @@ body {
 }
 
 /* join us */
+.join-us-section{
+    padding: 100px;
+}
 
 .join-us-section h1 {
     margin-bottom: 20px;
@@ -730,7 +809,7 @@ body {
     padding: 15px;
     border: none;
     border-radius: 5px;
-    background-color: #1e911a ;
+    background-color: #367536 ;
     color: #ffffff;
     font-size: 1em;
     cursor: pointer;
@@ -739,4 +818,77 @@ body {
 
 .join-us-section button:hover {
     background-color: #2b2a2a;
+}
+
+@media (max-width: 768px) {
+    .join-us-section{
+        padding: 0px;
+    }
+}
+
+/* contact us  */
+
+.contact-us-section {
+    margin-top: 0px;
+    max-width: 1800px;
+    background-color: #367536; 
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-us-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.contact-item i {
+    font-size: 1.5em;
+}
+
+@media (min-width: 600px) {
+   
+    .contact-info {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 830px){
+    .contact-us-section{
+        margin-top: 20px;
+    }
+}
+
+/* footer */
+
+
+
+
+.footer-bottom {
+    background-color: #386138; 
+    padding: 10px 0;
+    border-radius: 30px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
 }

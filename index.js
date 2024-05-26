@@ -68,10 +68,6 @@ function showSlides() {
 }
 
 
-
-
-
-
 // news updates
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.read-more-btn');
@@ -109,16 +105,16 @@ function showFeedbackSlides() {
     }
     slides[feedbackSlideIndex-1].style.display = "block";  
     dots[feedbackSlideIndex-1].className += " feedback-active";
-    setTimeout(showFeedbackSlides, 7000); // Change image every 3 seconds
+    setTimeout(showFeedbackSlides, 7000); 
 }
 
 function changeFeedbackSlide(n) {
-    feedbackSlideIndex += n - 1; // Adjust for 1-based indexing
+    feedbackSlideIndex += n - 1; 
     showFeedbackSlides();
 }
 
 function setFeedbackSlide(n) {
-    feedbackSlideIndex = n - 1; // Adjust for 1-based indexing
+    feedbackSlideIndex = n - 1; 
     showFeedbackSlides();
 }
 
@@ -148,3 +144,7 @@ document.getElementById('join-us-form').addEventListener('submit', function(even
             alert('Failed to send your information. Please try again.');
         });
 });
+
+
+
+
