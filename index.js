@@ -41,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let slideIndex = 0;
 showSlides();
-
-
 function changeSlide(n) {
     clearInterval(autoSlide); 
     slideIndex += n;
@@ -51,7 +49,6 @@ function changeSlide(n) {
         showSlides(slideIndex += 1);
     }, 0); 
 }
-
 
 let autoSlide = setInterval(function() {
     showSlides(slideIndex += 1);
@@ -71,33 +68,9 @@ function showSlides() {
 }
 
 
-// feedback slides
-let feedbackSlideIndex = 1;
-showFeedbackSlides(feedbackSlideIndex);
 
 
-function changeFeedbackSlide(n) {
-    showFeedbackSlides(feedbackSlideIndex += n);
-}
-function setFeedbackSlide(n) {
-    showFeedbackSlides(feedbackSlideIndex = n);
-}
 
-function showFeedbackSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("feedback-slide");
-    let dots = document.getElementsByClassName("feedback-dot");
-    if (n > slides.length) {feedbackSlideIndex = 1}
-    if (n < 1) {feedbackSlideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" feedback-active", "");
-    }
-    slides[feedbackSlideIndex-1].style.display = "block";
-    dots[feedbackSlideIndex-1].className += " feedback-active";
-}
 
 // news updates
 document.addEventListener('DOMContentLoaded', function() {
@@ -117,3 +90,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+// feedback
+let feedbackSlideIndex = 0;
+showFeedbackSlides();
+
+function showFeedbackSlides() {
+    let i;
+    let slides = document.getElementsByClassName("feedback-slide");
+    let dots = document.getElementsByClassName("feedback-dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    feedbackSlideIndex++;
+    if (feedbackSlideIndex > slides.length) {feedbackSlideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" feedback-active", "");
+    }
+    slides[feedbackSlideIndex-1].style.display = "block";  
+    dots[feedbackSlideIndex-1].className += " feedback-active";
+    setTimeout(showFeedbackSlides, 7000); // Change image every 3 seconds
+}
+
+function changeFeedbackSlide(n) {
+    feedbackSlideIndex += n - 1; // Adjust for 1-based indexing
+    showFeedbackSlides();
+}
+
+function setFeedbackSlide(n) {
+    feedbackSlideIndex = n - 1; // Adjust for 1-based indexing
+    showFeedbackSlides();
+}
+
+
+// join us
+document.getElementById('join-us-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('from_name').value;
+    const email = document.getElementById('Your_Email').value;
+    const phone = document.getElementById('Your_Phone_Number').value;
+    const message = document.getElementById('Message').value;
+
+    const templateParams = {
+        from_name: name,
+        Your_Email: email,
+        Your_Phone_Number: phone,
+        Message:message
+
+    };
+
+    emailjs.send('service_f86iq6p', 'template_h2g407n', templateParams)
+        .then(function(response) {
+            alert('Success! Your information has been sent.');
+            document.getElementById('join-us-form').reset();
+        }, function(error) {
+            alert('Failed to send your information. Please try again.');
+        });
+});

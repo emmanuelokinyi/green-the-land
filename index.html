@@ -8,8 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+    publicKey: "ZEltGtpdcI1OLo2PD",
+  });
+})();
+</script>
+    
 </head>
-
 
 <body>
     <div class="landing-page">
@@ -33,7 +43,8 @@
             <h1>Green Revolution</h1>
             <h2>Join the movement! High school graduates planting trees in primary schools to fight climate change and educate 
                  the next generation on its devastating effects.</h2>
-                 <button class="join-button">Join Us</button>
+                 <a href="#join-section"><button class="join-button">Join Us</button></a>
+                 
         </main>
     </div>
     <!-- mission -->
@@ -54,8 +65,6 @@
                 <h1 class="gallery">Photo Gallery</h1>
             </div>
             <div class="slideshow-container">
-                
-                
                 <div class="slide">
                     <img src="./assets/mission1.jpg" alt="Image 1">
                 </div>
@@ -133,10 +142,7 @@
                 </div>
 
             </div>
-            <!-- Navigation buttons -->
-            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-            <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        
+       
             <!-- faq section -->
             <div class="faq-section">
                 <h1 class="faq-header">FAQ</h1>
@@ -230,20 +236,26 @@
             </div>
         
             <!-- feedback section -->
+            <h1 class="feedback-head">Feedback</h1>
         <div class="feedback-slideshow-container">
             <div class="feedback-slide fade">
-                <img src="./assets/mission1.jpg" style="width:100%">
-                <div class="feedback-text">Caption for Image 1</div>
+                <img src="./assets/mr-polo2.jpg" class="feedback-img">
+                <div class="feedback-text"><h2>Green the Land is a game-changer! Planting trees and saving the planet, one school at a time.</h2><h3>Mr.Georgr Polo 
+                    <br>Headteacher, xaverian Primary</h3></div>
             </div>
     
             <div class="feedback-slide fade">
-                <img src="./assets/mission10.jpg" style="width:100%">
-                <div class="feedback-text">Caption for Image 2</div>
+                <img src="./assets/mr-owino.jpg" class="feedback-img">
+                <div class="feedback-text"><h2>I never knew planting trees could be this fun and impactful!</h2>
+                <h3>Mr.Owino <br>Teacher, Xaverian Primary</h3></div>
             </div>
     
             <div class="feedback-slide fade">
-                <img src="./assets/mission11.jpg" style="width:100%">
-                <div class="feedback-text">Caption for Image 3</div>
+                <img src="./assets/mission16.jpg" class="feedback-img">
+                <div class="feedback-text"> 
+                    <h2>Learning about the devastating effects of climate change and the role I can play in combating it is transformative.Now I feel more empowered to advocate for environmental protection in my community </h2>
+                        <h3>Student, Victoria Primary School</h3>
+                </div>
             </div>
     
             <!-- Next and previous buttons -->
@@ -257,6 +269,38 @@
             <span class="feedback-dot" onclick="setFeedbackSlide(2)"></span> 
             <span class="feedback-dot" onclick="setFeedbackSlide(3)"></span> 
         </div>
+
+        <!-- Stats -->
+        <h1 class="stats-text">Stats</h1>
+        <div class="stats-section">
+            
+            <div class="stat">
+                <h2 class="stat-number">3,000+</h2>
+                <p class="stat-label">Trees Planted</p>
+            </div>
+            <div class="stat">
+                <h2 class="stat-number">150+</h2>
+                <p class="stat-label">High School Graduates Involved</p>
+            </div>
+            <div class="stat">
+                <h2 class="stat-number">2+</h2>
+                <p class="stat-label">Primary Schools Impacted</p>
+            </div>
+        </div>
+        
+        <!-- join us -->
+        <div id="join-section" class="join-us-section">
+            <h1>Join the Movement</h1>
+            <form id="join-us-form">
+                <input type="text" id="from_name" name="name" placeholder="Your Name" required>
+                <input type="email" id="Your_Email" name="email" placeholder="Your Email" required>
+                <input type="tel" id="Your_Phone_Number" name="phone" placeholder="Your Phone Number" required>
+                <textarea id="Message" name="message" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        
         
     </div>
     <script src="index.js"></script>
